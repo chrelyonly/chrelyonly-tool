@@ -1,4 +1,4 @@
 /* TEAM */
-Developer: Corentin Thomasset
-Site: https://github.com/CorentinTh
+Developer: 素材来源与网络
+Site: https://github.com/chrelyonly
 Twitter: @cthmsst

@@ -4,9 +4,9 @@ Useful tools for developer and people working in IT. [Have a look !](https://it-
 
 ## Functionalities and roadmap
 
-Please check the [issues](https://github.com/CorentinTh/it-tools/issues) to see if some feature listed to be implemented.
+Please check the [issues](https://github.com/chrelyonly/it-tools/issues) to see if some feature listed to be implemented.
 
-You have an idea of a tool? Submit a [feature request](https://github.com/CorentinTh/it-tools/issues/new/choose)!
+You have an idea of a tool? Submit a [feature request](https://github.com/chrelyonly/it-tools/issues/new/choose)!
 
 ## Self host
 
@@ -113,7 +113,7 @@ Big thanks to all the people who have already contributed!
 
 ## Credits
 
-Coded with ❤️ by [Corentin Thomasset](//corentin-thomasset.fr).
+Coded with ❤️ by [素材来源与网络](//corentin-thomasset.fr).
 
 This project is continuously deployed using [vercel.com](https://vercel.com).
 

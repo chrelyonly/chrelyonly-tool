@@ -61,9 +61,8 @@ const tools = computed<ToolCategory[]>(() => [
 
         <div class="footer">
           <div>
-            IT-Tools
-
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+            chrelyonly-tool
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/chrelyonly/it-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
 
@@ -73,7 +72,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/chrelyonly/it-tools/tree/${commitSha}`"
               >
                 {{ commitSha }}
               </c-link>
@@ -81,8 +80,9 @@ const tools = computed<ToolCategory[]>(() => [
           </div>
           <div>
             © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://github.com/CorentinTh">
-              Corentin Thomasset
+            <c-link target="_blank" rel="noopener" href="https://github.com/chrelyonly">
+              <div>素材来源与网络</div>
+              <div>https://github.com/CorentinTh/it-tools</div>
             </c-link>
           </div>
         </div>
