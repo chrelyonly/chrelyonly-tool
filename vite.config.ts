@@ -15,9 +15,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import markdown from 'vite-plugin-vue-markdown';
 import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
-
 const baseUrl = process.env.BASE_URL ?? '/';
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -43,7 +41,7 @@ export default defineConfig({
       ],
       vueTemplate: true,
       eslintrc: {
-        enabled: true,
+        enabled: false,
       },
     }),
     Icons({ compiler: 'vue3' }),
@@ -96,7 +94,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [NaiveUiResolver(), IconsResolver({ prefix: 'icon' })],
     }),
-    Unocss(),
+    Unocss()
   ],
   base: baseUrl,
   resolve: {
@@ -112,5 +110,44 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    cssTarget: 'chrome80',
+    minify: 'terser', // 必须开启：使用terserOptions才有效果
+    terserOptions: {
+      compress: {
+        keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
+        drop_console: true, // 生产环境去除 console
+        drop_debugger: true, // 生产环境去除 debugger
+      },
+    },
+    brotliSize: true, // 进行压缩计算
+    chunkSizeWarningLimit: 1000, // chunk 大小警告的限制（以 kbs 为单位）
+    cssCodeSplit: true,
+    // 关闭文件计算
+    reportCompressedSize: true,
+    // 关闭生成map文件 可以达到缩小打包体积
+    sourcemap: false, // 这个生产环境一定要关闭，不然打包的产物会很大
+    rollupOptions: {
+      output: { // 分包
+        // 静态资源打包做处理
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        manualChunks(id) {
+          let result = '';
+          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+          for (let i = 0; i < 32; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+          }
+          //打印所有资源
+          console.log('id：', id)
+          return "modules" +  result;
+          // if (id.includes('node_modules')) {
+          //   return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          // }
+        },
+      },
+    },
   },
 });
+
