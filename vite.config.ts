@@ -133,18 +133,9 @@ export default defineConfig({
         entryFileNames: 'static/js/[name]-[hash].js',
         assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
         manualChunks(id) {
-          let result = '';
-          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-          for (let i = 0; i < 32; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString();
           }
-          //打印所有资源
-          console.log('id：', id)
-          return "modules" +  result;
-          // if (id.includes('node_modules')) {
-          //   return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          // }
         },
       },
     },
