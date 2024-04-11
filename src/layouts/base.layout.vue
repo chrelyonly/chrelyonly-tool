@@ -80,7 +80,7 @@ const tools = computed<ToolCategory[]>(() => [
           </div>
           <div>
             © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://github.com/chrelyonly">
+            <c-link target="_blank" rel="noopener" href="https://github.com/CorentinTh/it-tools">
               <div>素材来源与网络</div>
               <div>https://github.com/CorentinTh/it-tools</div>
             </c-link>
@@ -120,20 +120,20 @@ const tools = computed<ToolCategory[]>(() => [
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
 
-        <c-tooltip position="bottom" :tooltip="$t('home.support')">
-          <c-button
-            round
-            href="https://www.buymeacoffee.com/cthmsst"
-            rel="noopener"
-            target="_blank"
-            class="support-button"
-            :bordered="false"
-            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
-          >
-            {{ $t('home.buyMeACoffee') }}
-            <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
-          </c-button>
-        </c-tooltip>
+<!--        <c-tooltip position="bottom" :tooltip="$t('home.support')">-->
+<!--          <c-button-->
+<!--            round-->
+<!--            href="https://www.buymeacoffee.com/cthmsst"-->
+<!--            rel="noopener"-->
+<!--            target="_blank"-->
+<!--            class="support-button"-->
+<!--            :bordered="false"-->
+<!--            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"-->
+<!--          >-->
+<!--            {{ $t('home.buyMeACoffee') }}-->
+<!--            <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />-->
+<!--          </c-button>-->
+<!--        </c-tooltip>-->
       </div>
       <slot />
     </template>
