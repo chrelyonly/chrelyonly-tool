@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <trees>
+     <tree path="/src/layouts/base.layout.vue" icon="XmlBrowsersCanary" textColor="255,66,44"/>
+     <tree path="/src/layouts/tool.layout.vue" icon="XmlBrowsersCanary" textColor="100,255,37"/>
+     <tree path="/src/layouts" title="结构布局父类" extension="" presentableText="" tooltipTitle="" icon="" textColor=""
+           backgroundColor=""/>
+ </trees>
